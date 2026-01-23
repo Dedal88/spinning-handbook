@@ -8,6 +8,7 @@
     />
     <title>Справочник спиннингиста</title>
     <link href="style.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -36,82 +37,66 @@
           </ul>
         </nav>
       </div>
-    </header>
 
-    <!-- <header class="header">
-      <div class="wrapper header__wrapper">
-        <div class="header__line">
-          <span class="hamburger">
-            <span class="hamburger__line"></span>
-          </span>
-          <a href="./index.html" class="logo">
-            <img src="./src/img/logo/logo.png" alt="logo" class="logo__image" />
-            Сергей
-          </a>
+      <div class="sidebar-menu">
+        <div class="sidebar-menu__overlay"></div>
+        <div class="sidebar-menu__content">
+          <button class="sidebar-menu__close-btn">
+            <img
+              class="sidebar-menu__close-btn-image"
+              src="./Images/close.svg"
+              alt="Закрыть меню"
+            />
+          </button>
+
+          <nav class="sidebar-menu__navigation">
+            <ul class="navigation">
+              <!-- <li class="navigation__link sidebar-menu__link">
+                <a href="index.html">Главная</a>
+              </li>
+              <li class="navigation__link sidebar-menu__link">
+                <a href="about.html">О программе</a>
+              </li>
+              <li class="navigation__link sidebar-menu__link">
+                <a href="contact.html">Контакты</a>
+              </li> -->
+              <li class="sidebar-menu__link">
+                <a href="index.html">Главная</a>
+              </li>
+              <li class="sidebar-menu__link">
+                <a href="about.html">О программе</a>
+              </li>
+              <li class="sidebar-menu__link">
+                <a href="contact.html">Контакты</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <nav class="header__navigation">
-          <ul class="navigation">
-            <li class="navigation__link">Домашняя</li>
-            <li class="navigation__link">Опыт работы</li>
-            <li class="navigation__link">Портфолио</li>
-            <a href="./src/pages/certificates/certificates.html">
-              <li class="navigation__link">Сертификаты</li>
-            </a>
-            <li class="navigation__link">Контакты</li>
-          </ul>
-        </nav> -->
-    <!-- 
-        <div class="sidebar-menu">
-          <div class="sidebar-menu__overlay"></div>
-          <div class="sidebar-menu__content">
-            <button class="sidebar-menu__close-btn">
-              <img
-                class="sidebar-menu__close-btn-image"
-                src="./src/img/icons/close.svg"
-                alt="Закрыть меню"
-              />
-            </button>
-
-            <nav class="sidebar-menu__navigation">
-              <ul class="navigation">
-                <li class="navigation__link sidebar-menu__link">Домашняя</li>
-                <li class="navigation__link sidebar-menu__link">Опыт работы</li>
-                <li class="navigation__link sidebar-menu__link">Портфолио</li>
-                <a href="./src/pages/certificates/certificates.html">
-                  <li class="navigation__link sidebar-menu__link">
-                    Сертификаты
-                  </li>
-                </a>
-                <li class="navigation__link sidebar-menu__link">Контакты</li>
-              </ul>
-            </nav>
-          </div>
-        </div> -->
-    <!-- </div>
-    </header> -->
+      </div>
+    </header>
 
     <!-- создаём блок опций для вывода интересующей информации -->
     <div class="options">
       <div id="options" class="options__wrapper wrapper">
         <!-- создаём функционал выбора интересующей нас рыбы для ловли -->
-        <div class="option">
+        <div class="options__option">
           <label for="fishes">Кого ловить будем ?!</label>
-          <select id="fishes">
+          <select id="fishes" class="options__input">
             <option value="Щука">Щука</option>
             <option value="Судак">Судак</option>
             <option value="Окунь">Окунь</option>
             <option value="Жерех">Жерех</option>
           </select>
         </div>
-        <div class="option">
+        <div class="options__option">
           <!-- создаём функционал выбора интересующей нас даты для ловли рыбы -->
           <label for="dat">Когда ловить будем ?!</label>
-          <input type="date" id="dat" />
+          <input type="date" id="dat" class="options__input" />
         </div>
-        <div class="option">
+        <div class="options__option">
           <!-- создаём функционал выбора интересующего нас региона для ловли рыбы -->
           <label for="regLov">Где ловить будем ?!</label>
-          <select id="regLov">
+          <select id="regLov" class="options__input">
             <option value=""></option>
             <option value="В Ивановской области">В Ивановской области</option>
             <option value="В Ярославской области">В Ярославской области</option>
