@@ -55,13 +55,19 @@ ol {
 /* --------------------------------------------------------------------------------- */
 
 body {
+  display: flex;
+  flex-direction: column;
   font-family: Helvetica, sans-serif;
   background: url('Images/fon3.jpg') center fixed;
   background-size: cover;
 }
 
+html {
+  height: 100%;
+}
+
 a {
-  text-decoration: none;
+  /* text-decoration: none;*/
   color: #0a21f2;
   font-weight: bold;
   font-size: 17px;
@@ -115,27 +121,35 @@ option {
   width: 250px;
 }
 
-.desFishes {
+.fishes-description {
+  position: absolute;
+  top: 100px;
+  text-align: center;
   width: 80%;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: whitesmoke;
   padding: 1% 1%;
-  margin: 1% auto;
+  left: 50%;
+  transform: translateX(-50%);
   border-radius: 5px;
 }
 
+/* .fishes-description_close {
+  display: flex;
+}
+
+.fishes-description_close {
+  display: none;
+} */
+
 .image {
   display: inline-block;
-  vertical-align: middle;
-  width: 32%;
-  min-width: 100px;
-  margin: 0 auto;
+  width: 30%;
+  margin: 15px 0;
 }
 
 .details {
   display: inline-block;
   vertical-align: top;
-  width: 63%;
-  margin: -1% auto;
   padding: 2%;
 }
 
@@ -146,7 +160,7 @@ option {
 }
 
 .description {
-  height: 100%;
+  width: 100%;
   font-size: 20px;
   overflow: auto;
 }
@@ -166,7 +180,7 @@ option {
 .header,
 .header__navigation .navigation__link,
 .logo {
-  transition: all 0.5s ease-out;
+  transition: all 0.4s ease-out;
 }
 
 .wrapper {
@@ -180,11 +194,6 @@ option {
   justify-content: space-between;
   width: 100%;
 }
-/* @media (max-width: 768px) {
-  .header__wrapper {
-    width: 90%;
-  }
-} */
 
 .header__line {
   display: inline-flex;
@@ -198,7 +207,6 @@ option {
 .header__navigation .navigation__link {
   margin-right: 50px;
   cursor: pointer;
-  color: #b0b0b2;
 }
 .header__navigation .navigation__link:hover {
   color: #ffffff;
@@ -217,12 +225,6 @@ option {
   height: 80px;
   background-color: rgba(49, 36, 57, 0.77);
   backdrop-filter: blur(10px);
-} */
-
-/* @media (max-width: 768px) {
-  .header__navigation {
-    display: none;
-  }
 } */
 
 .logo {
@@ -354,6 +356,19 @@ option {
   margin-top: 10%;
 }
 
+.fishes-description__close-button {
+  background: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.close-button__wrapper {
+  display: flex;
+  justify-content: end;
+}
+
 @media (max-width: 768px) {
   .header__wrapper {
     width: 90%;
@@ -381,7 +396,20 @@ option {
   .options__input {
     width: 90%;
   }
+
+  .button__wrapper {
+    margin-bottom: 50px;
+  }
+
+  .fishes-description {
+    width: 90%;
+  }
+
+  .image {
+    width: 50%;
+  }
 }
+
 @media (max-width: 380px) {
   .sidebar-menu__content {
     width: 100%;
@@ -394,12 +422,28 @@ option {
   .options__input {
     width: 80%;
   }
-}
-/* .header__button {
-  height: 40px;
-}
-@media (max-width: 768px) {
-  .header__button {
-    height: 50px;
+
+  .header__wrapper {
+    margin-top: 10px;
+    margin-bottom: 50px;
   }
-} */
+
+  .header__line {
+    width: 100%;
+  }
+}
+
+main {
+  flex: 1;
+}
+
+.footer__copyright {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: normal;
+  color: #2929c9;
+  font-size: 15px;
+}

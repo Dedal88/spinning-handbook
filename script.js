@@ -1,9 +1,4 @@
 'use strict';
-// создаём переменные с описанием для каждого вида рыбы
-const desShuka = document.getElementById('Щука').innerHTML;
-const desSudak = document.getElementById('Судак').innerHTML;
-const desOkun = document.getElementById('Окунь').innerHTML;
-const desZhereh = document.getElementById('Жерех').innerHTML;
 
 // устанавливаем минимально возмужную дату для выбора
 // текущей датой, чтобы не было возможности выбора даты из прошлого
@@ -14,7 +9,24 @@ dat.min = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
 // создаём объект fishes, содержащий виды рыб с описанием и др. св-ми
 const fishes = {
   Щука: {
-    descrip: desShuka, // описание рыбы
+    descrip: ` <b>Щука</b> – любопытный и прожорливый хищник. Её интересует всё, что
+        происходит в непосредственной близости. Голодную щуку привлекает любая
+        суета на поверхности и в толще воды вблизи места ее нахождения. Жор щуки
+        часто сменяется длительным отсутствием клёва, в это время щука
+        становится очень привередливой. Однако правильно подобранная приманка и
+        нестандартная интересная проводка способны спровоцировать даже вялую
+        сытую рыбину. Щука гораздо реже реагирует на равномерную скоростную
+        проводку без пауз. Ей больше интересна проводка сочетающаяся с паузами,
+        подёргиваниями и тычками. Щука любит обитать в ямах, омутах, около
+        затонувших коряг, лежащих на дне камней. Хороший эффект приносит
+        проводка приманки с отмели в глубину ямы. Обычно на выходе из ямы щука
+        поджидает свою жертву. В летнее время приносит успех проводка блесны
+        вдоль береговой растительности. Окно между камышами, выступающий из воды
+        камень, нависшая над водой растительность – в таких укромных местах
+        часто стоит щука в ожидании своей жертвы. Летом хорошо себя показывают
+        небольшие блесны (вертушки и колебаки). Осенью щука перебирается на
+        более глубокие места. Во время осеннего жора зубастая хищница
+        предпочитает более крупные приманки.`,
     months: {
       // календарь клёва рыбы
       1: 'слабый клёв, пассивное поведение.',
@@ -39,7 +51,18 @@ const fishes = {
     },
   },
   Судак: {
-    descrip: desSudak, // описание рыбы
+    descrip: `<b>Судак</b> – стайная рыба, держится обычно около дна, на время своей кормёжки
+        иногда поднимается к поверхности. Трофейные экземпляры обычно ведут
+        более уединенный образ жизни и держатся обособленно. Клыкастый хищник
+        обитает в водоемах с хорошим качеством воды. Большие реки, озёра и
+        водохранилища с чистой и холодной водой, каменистым или песчаным дном —
+        вот среда обитания судака. Места с омутами, свалами и резким перепадом
+        рельефа дна, большим содержанием коряжника, привлекают хищника для
+        скопления. Судак избегает участков с водяными зарослями. Судак не любит
+        резких перепадов температур и смены атмосферного фронта. Судак прекрасно
+        берет при высоком или низком давлении, которое удерживается на одном
+        уровне на протяжении нескольких дней. На клев погода не влияет, его
+        ухудшает резкая смена солнца на дождь и наоборот.`,
     months: {
       // календарь клёва рыбы
       1: 'слабый клёв.',
@@ -64,7 +87,18 @@ const fishes = {
     },
   },
   Окунь: {
-    descrip: desOkun, // описание рыбы
+    descrip: `<b>Окунь</b> – этот полосатый разбойник вооружен мелкими, острыми зубами и
+        имеет довольно большой рот для своего размера. Мелкий и средний окунь
+        держится стаями, более крупный окунь может держаться в стороне,
+        предпочитая более глубокие места. Окуню нравятся обрывистые берега,
+        коряжник, омуты и ямы. Окунь не любит быстрое течение, он больше
+        предпочитает спокойные заводи с водной растительностью, где он может
+        замаскироваться в ожидании своей жертвы. Основной пищей окуню служит
+        мелкая рыбешка, и поэтому блесна должна быть небольшой. Практикой
+        доказано, что для ловли окуня наиболее подходят небольшие вращающиеся
+        блесны, а также джиговые приманки. Хорошие результаты показала ловля
+        этого хищника на отводной поводок и так называемые «окуневые дорожки» во
+        время жора этой рыбы.`,
     months: {
       // календарь клёва рыбы
       1: 'слабый клёв, пассивное поведение.',
@@ -89,7 +123,18 @@ const fishes = {
     },
   },
   Жерех: {
-    descrip: desZhereh, // описание рыбы
+    descrip: `<b>Жерех</b> – дневной хищник, кормится мелкой рыбой. Его кормёжка часто
+        сопровождается «боем» мелкой рыбы. Жерех любит обитать в глубоких
+        омутах, водоворотах и речных перекатах. Обычно жерех стоит группами.
+        Держится преимущественно у поверхности воды и в её толще. Жерех у
+        поверхности хорошо видит человека, поэтому в толще воды его несомненно
+        поймать легче. Этого хищника успешно ловят весной, когда он охотится на
+        значительной глубине, а также при помутнении воды и в пасмурную погоду с
+        легким ветерком, вызывающим рябь. Жерех - довольно осторожный хищник.
+        Осторожность тем сильнее, чем больше предлагаемая приманка отличается от
+        естественного объекта охоты. Бывает, что жерех просто преследует
+        приманку, не нападая на нее. В подобных ситуациях часто помогает
+        ускорение проводки или сочетание проводки с рывками и подёргиваниями.`,
     months: {
       // календарь клёва рыбы
       1: 'что клёв отсутствует.',
@@ -115,6 +160,7 @@ const fishes = {
   },
 };
 
+const desFish = document.getElementById('descripFish');
 // создаём функцию, которая будет отрабатывать при нажатии на копку "Получения информации"
 // и выводить информацию в соответствии с заполненными полями и выбранными значениями
 function getInform() {
@@ -122,7 +168,7 @@ function getInform() {
   const inform = document.getElementById('information');
   const nameFish = document.getElementById('name');
   const picFish = document.getElementById('pic');
-  const desFish = document.getElementById('descripFish');
+  // const desFish = document.getElementById('descripFish');
   const desKlev = document.getElementById('desKlev');
   const infKlev = document.getElementById('infKlev');
   const desRegLov = document.getElementById('desRegLov');
@@ -167,76 +213,10 @@ function getInform() {
 // получаем элемент кнопки и назначаем для него событие щелчка мыши
 const but = document.getElementById('but');
 but.onclick = getInform;
+////////////////
+const buttonClose = document.querySelector('.fishes-description__close-button');
 
-// sider bar menu
-
-function sidebarMenu() {
-  const hamburger = document.querySelector('.hamburger');
-  const sidebarMenu = document.querySelector('.sidebar-menu');
-  const sidebarCloseBtn = document.querySelector('.sidebar-menu__close-btn');
-  const sidebarOverlay = document.querySelector('.sidebar-menu__overlay');
-  const sidebarLinks = document.querySelectorAll('.sidebar-menu__link');
-
-  function openSidebarMenu() {
-    sidebarMenu.classList.add('sidebar-menu_open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeSidebarMenu() {
-    sidebarMenu.classList.remove('sidebar-menu_open');
-    document.body.style.overflow = 'auto';
-  }
-
-  hamburger.addEventListener('click', openSidebarMenu);
-  sidebarCloseBtn.addEventListener('click', closeSidebarMenu);
-  sidebarOverlay.addEventListener('click', closeSidebarMenu);
-
-  sidebarLinks.forEach((link) => {
-    link.addEventListener('click', closeSidebarMenu);
-  });
-
-  swipeSidebar(closeSidebarMenu, sidebarOverlay, sidebarMenu);
-}
-
-function swipeSidebar(closeSidebar, sidebarOverlay, sidebarMenu) {
-  let touchStartX = 0;
-  let touchEndX = 0;
-  const swipeThreshold = 50;
-
-  function handleTouchStart(e) {
-    touchStartX = e.changedTouches[0].screenX;
-  }
-
-  function handleTouchEnd(e) {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }
-
-  function handleSwipe() {
-    const swipeDistance = touchEndX - touchStartX;
-
-    if (
-      swipeDistance > swipeThreshold &&
-      sidebarMenu.classList.contains('sidebar-menu_open')
-    ) {
-      closeSidebar();
-    }
-  }
-
-  sidebarOverlay.addEventListener('touchstart', handleTouchStart, {
-    passive: true,
-  });
-  sidebarOverlay.addEventListener('touchend', handleTouchEnd, {
-    passive: true,
-  });
-
-  const sidebarContent = document.querySelector('.sidebar-menu__content');
-  sidebarContent.addEventListener('touchstart', handleTouchStart, {
-    passive: true,
-  });
-  sidebarContent.addEventListener('touchend', handleTouchEnd, {
-    passive: true,
-  });
-}
-
-sidebarMenu();
+buttonClose.addEventListener('click', () => {
+  desFish.hidden = true;
+});
+////////////////
