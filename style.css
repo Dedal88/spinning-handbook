@@ -67,14 +67,13 @@ html {
 }
 
 a {
-  /* text-decoration: none;*/
-  color: #0a21f2;
+  color: #ee6307;
   font-weight: bold;
   font-size: 17px;
 }
 
 a:hover {
-  color: white;
+  color: whitesmoke;
 }
 
 h1 {
@@ -110,7 +109,7 @@ label {
 }
 
 #but:hover {
-  background-color: #e3cd7f;
+  background-color: #e6762b;
 }
 
 select,
@@ -132,14 +131,6 @@ option {
   transform: translateX(-50%);
   border-radius: 5px;
 }
-
-/* .fishes-description_close {
-  display: flex;
-}
-
-.fishes-description_close {
-  display: none;
-} */
 
 .image {
   display: inline-block;
@@ -172,8 +163,7 @@ option {
   --tablet-width: 768px;
   --mobile-width: 380px;
 }
-
-.button::after,
+#but,
 .sidebar-menu,
 .sidebar-menu__overlay,
 .sidebar-menu__content,
@@ -213,19 +203,19 @@ option {
 }
 
 .header {
-  /* height: 114px; */
+  height: 60px;
   display: flex;
   align-items: center;
-  /* position: fixed; */
+  position: fixed;
   width: 100%;
   z-index: 3;
 }
 
-/* .header_scrolled {
+.header_scrolled {
   height: 80px;
-  background-color: rgba(49, 36, 57, 0.77);
+  background-color: #585881;
   backdrop-filter: blur(10px);
-} */
+}
 
 .logo {
   display: flex;
@@ -369,6 +359,11 @@ option {
   justify-content: end;
 }
 
+.about-title,
+.contact-title {
+  padding-bottom: 50px;
+}
+
 @media (max-width: 768px) {
   .header__wrapper {
     width: 90%;
@@ -382,7 +377,7 @@ option {
   }
 
   .options__wrapper {
-    margin-top: 12%;
+    margin-top: 20%;
     flex-direction: column;
     width: 40%;
     align-items: center;
@@ -423,13 +418,12 @@ option {
     width: 80%;
   }
 
-  .header__wrapper {
-    margin-top: 10px;
-    margin-bottom: 50px;
-  }
-
   .header__line {
     width: 100%;
+  }
+
+  .options__wrapper {
+    margin-top: 100px;
   }
 }
 
