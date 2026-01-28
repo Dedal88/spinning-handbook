@@ -52,14 +52,27 @@ ol {
   list-style: none;
 }
 
-/* --------------------------------------------------------------------------------- */
-
 body {
   display: flex;
   flex-direction: column;
   font-family: Helvetica, sans-serif;
-  background: url('Images/fon3.jpg') center fixed;
   background-size: cover;
+}
+
+main {
+  flex: 1;
+}
+
+.main-page {
+  background: url('Images/fon3.jpg') center/cover no-repeat fixed;
+}
+
+.about-page {
+  background: url('Images/fon2.jpg') center/cover no-repeat fixed;
+}
+
+.contact-page {
+  background: url('Images/fon1.jpg') center/cover no-repeat fixed;
 }
 
 html {
@@ -94,7 +107,7 @@ label {
   color: #0a21f2;
 }
 
-#but {
+.button {
   width: 220px;
   height: 40px;
   font-size: 17px;
@@ -108,7 +121,7 @@ label {
   justify-content: end;
 }
 
-#but:hover {
+.button:hover {
   background-color: #e6762b;
 }
 
@@ -130,6 +143,10 @@ option {
   left: 50%;
   transform: translateX(-50%);
   border-radius: 5px;
+}
+
+.fishes-description_transparent {
+  opacity: 0.8;
 }
 
 .image {
@@ -156,14 +173,12 @@ option {
   overflow: auto;
 }
 
-/* ------------------------------------------------------------------------------------ */
-
 :root {
   --content-width: 1200px;
   --tablet-width: 768px;
   --mobile-width: 380px;
 }
-#but,
+.button,
 .sidebar-menu,
 .sidebar-menu__overlay,
 .sidebar-menu__content,
@@ -364,6 +379,17 @@ option {
   padding-bottom: 50px;
 }
 
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: normal;
+  color: #2929c9;
+  font-size: 15px;
+}
+
 @media (max-width: 768px) {
   .header__wrapper {
     width: 90%;
@@ -425,19 +451,4 @@ option {
   .options__wrapper {
     margin-top: 100px;
   }
-}
-
-main {
-  flex: 1;
-}
-
-.footer__copyright {
-  display: flex;
-  justify-content: center;
-  margin-top: 150px;
-  font-size: 1.4rem;
-  font-style: normal;
-  font-weight: normal;
-  color: #2929c9;
-  font-size: 15px;
 }

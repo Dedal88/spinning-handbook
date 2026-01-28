@@ -13,7 +13,7 @@
     <script src="header.js" defer></script>
     <script src="mobile-menu.js" defer></script>
   </head>
-  <body>
+  <body class="main-page">
     <header class="header">
       <div class="wrapper header__wrapper">
         <div class="header__line">
@@ -68,10 +68,8 @@
       </div>
     </header>
     <main>
-      <!-- создаём блок опций для вывода интересующей информации -->
       <div class="options">
         <div id="options" class="options__wrapper wrapper">
-          <!-- создаём функционал выбора интересующей нас рыбы для ловли -->
           <div class="options__option">
             <label for="fishes">Кого ловить будем ?!</label>
             <select id="fishes" class="options__input">
@@ -82,12 +80,10 @@
             </select>
           </div>
           <div class="options__option">
-            <!-- создаём функционал выбора интересующей нас даты для ловли рыбы -->
             <label for="dat">Когда ловить будем ?!</label>
             <input type="date" id="dat" class="options__input" />
           </div>
           <div class="options__option">
-            <!-- создаём функционал выбора интересующего нас региона для ловли рыбы -->
             <label for="regLov">Где ловить будем ?!</label>
             <select id="regLov" class="options__input">
               <option value=""></option>
@@ -97,16 +93,12 @@
               </option>
             </select>
           </div>
-          <!-- создаём кнопку которая будет запускать выполнение функции для вывода информации -->
           <div class="button__wrapper">
-            <!-- <input type="button" id="but" value="Получить информацию" /> -->
-            <button id="but">Получить информацию</button>
+            <button class="button">Получить информацию</button>
           </div>
         </div>
       </div>
 
-      <!-- создаём блок, в котором будет выводиться запрашиваемая информация
-  в соответствии с выбранными опциями-->
       <article hidden id="descripFish" class="fishes-description">
         <div class="close-button__wrapper">
           <img
@@ -126,8 +118,8 @@
         </section>
       </article>
     </main>
-    <footer>
-      <div class="footer__copyright">
+    <footer class="footer">
+      <div>
         <p>© Copyright 2026</p>
       </div>
     </footer>

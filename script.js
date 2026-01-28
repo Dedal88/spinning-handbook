@@ -1,12 +1,5 @@
 'use strict';
 
-// устанавливаем минимально возмужную дату для выбора
-// текущей датой, чтобы не было возможности выбора даты из прошлого
-let now = new Date();
-let dat = document.getElementById('dat');
-dat.min = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
-
-// создаём объект fishes, содержащий виды рыб с описанием и др. св-ми
 const fishes = {
   Щука: {
     descrip: ` <b>Щука</b> – любопытный и прожорливый хищник. Её интересует всё, что
@@ -28,7 +21,6 @@ const fishes = {
         более глубокие места. Во время осеннего жора зубастая хищница
         предпочитает более крупные приманки.<br><br>`,
     months: {
-      // календарь клёва рыбы
       1: 'слабый клёв, пассивное поведение.',
       2: 'клёв.',
       3: 'жор, рыба активна.',
@@ -43,7 +35,6 @@ const fishes = {
       12: 'слабый клёв, пассивное поведение.',
     },
     regLov: {
-      // водоёмы, в которых эта рыба водится по регионам
       'В Ивановской области':
         'Уводьское водохранилище, р. Уводь, Горьковское водохранилище, р. Волга, оз. Ламское, оз. Западное, оз. Заборье, оз. Поныхарь, пруды Тейковсого района, р. Теза, р. Клязьма, оз. Юрцино.',
       'В Ярославской области':
@@ -64,7 +55,6 @@ const fishes = {
         уровне на протяжении нескольких дней. На клев погода не влияет, его
         ухудшает резкая смена солнца на дождь и наоборот.<br><br>`,
     months: {
-      // календарь клёва рыбы
       1: 'слабый клёв.',
       2: 'слабый клёв, который улучшается во время оттепели или снегопада.',
       3: 'слабый клёв, который улучшается во время оттепели или снегопада.',
@@ -79,7 +69,6 @@ const fishes = {
       12: 'слабый клёв, пассивное поведение.',
     },
     regLov: {
-      // водоёмы, в которых эта рыба водится
       'В Ивановской области':
         'Уводьское водохранилище, р. Уводь, Горьковское водохранилище, р. Волга, р. Теза, оз. Заборье.',
       'В Ярославской области':
@@ -100,7 +89,6 @@ const fishes = {
         этого хищника на отводной поводок и так называемые «окуневые дорожки» во
         время жора этой рыбы.<br><br>`,
     months: {
-      // календарь клёва рыбы
       1: 'слабый клёв, пассивное поведение.',
       2: 'слабый клёв, пассивное поведение.',
       3: 'жор, рыба активна.',
@@ -115,7 +103,6 @@ const fishes = {
       12: 'клёв.',
     },
     regLov: {
-      // водоёмы, в которых эта рыба водится
       'В Ивановской области':
         'Уводьское водохранилище, р. Уводь, Горьковское водохранилище, р. Волга, оз. Ламское, оз. Западное, оз. Поныхарь, пруды Тейковсого района, р. Теза, р. Клязьма.',
       'В Ярославской области':
@@ -136,7 +123,6 @@ const fishes = {
         приманку, не нападая на нее. В подобных ситуациях часто помогает
         ускорение проводки или сочетание проводки с рывками и подёргиваниями.<br><br>`,
     months: {
-      // календарь клёва рыбы
       1: 'что клёв отсутствует.',
       2: 'что клёв отсутствует.',
       3: 'что клёв отсутствует.',
@@ -151,7 +137,6 @@ const fishes = {
       12: 'что клёв отсутствует.',
     },
     regLov: {
-      // водоёмы, в которых эта рыба водится
       'В Ивановской области':
         'Уводьское водохранилище, р. Уводь, Горьковское водохранилище, р. Волга, оз. Заборье, р. Теза, р. Клязьма.',
       'В Ярославской области':
@@ -161,77 +146,54 @@ const fishes = {
 };
 
 const desFish = document.getElementById('descripFish');
-// создаём функцию, которая будет отрабатывать при нажатии на копку "Получения информации"
-// и выводить информацию в соответствии с заполненными полями и выбранными значениями
+
 function getInform() {
-  // получаем элементы содержание которых будем менять
-  const inform = document.getElementById('information');
+  const information = document.getElementById('information');
   const nameFish = document.getElementById('name');
-  const picFish = document.getElementById('pic');
-  // const desFish = document.getElementById('descripFish');
-  const desKlev = document.getElementById('desKlev');
-  const infKlev = document.getElementById('infKlev');
-  const desRegLov = document.getElementById('desRegLov');
-  const infRegLov = document.getElementById('infRegLov');
-  // получаем элементы select, чтобы далее получить
-  // текущее выбранное значение
+  const fishPicture = document.getElementById('pic');
+  const klevTitle = document.getElementById('desKlev');
+  const klevInformation = document.getElementById('infKlev');
+  const regionTitle = document.getElementById('desRegLov');
+  const regionInformation = document.getElementById('infRegLov');
   const fish = document.getElementById('fishes');
-  const regLovSel = document.getElementById('regLov');
-  // реализуем логику работы нашей функции
+  const regionLovli = document.getElementById('regLov');
+
   for (let item in fishes) {
-    const selReg = regLovSel.options[regLovSel.selectedIndex].value;
+    const selectedRegion = regionLovli.options[regionLovli.selectedIndex].value;
     if (item === fish.options[fish.selectedIndex].value) {
-      inform.innerHTML = fishes[item].descrip;
+      information.innerHTML = fishes[item].descrip;
       nameFish.innerHTML = `"${item}"`;
-      picFish.src = `Images/${item}.jpg`;
+      fishPicture.src = `Images/${item}.jpg`;
       desFish.hidden = false;
       if (dat.value != '') {
         const numMonth = dat.valueAsDate.getMonth() + 1;
         const klev = fishes[item].months[numMonth];
-        desKlev.innerHTML = 'Информация о клёве рыбы';
-        infKlev.innerHTML = `На выбранную дату по календарю клёва ожидается: ${klev} `;
+        klevTitle.innerHTML = 'Информация о клёве рыбы';
+        klevInformation.innerHTML = `На выбранную дату по календарю клёва ожидается: ${klev} `;
       } else {
-        desKlev.innerHTML = '';
-        infKlev.innerHTML = '';
+        klevTitle.innerHTML = '';
+        klevInformation.innerHTML = '';
       }
-      if (selReg != '') {
-        desRegLov.innerHTML = 'Наличие рыбы в водоёмах выбранного региона';
-        infRegLov.innerHTML =
-          selReg +
+      if (selectedRegion != '') {
+        regionTitle.innerHTML = 'Наличие рыбы в водоёмах выбранного региона';
+        regionInformation.innerHTML =
+          selectedRegion +
           ' ' +
           item.toLocaleLowerCase() +
           ' водится в следующих водоёмах: ' +
-          fishes[item].regLov[selReg];
+          fishes[item].regLov[selectedRegion];
       } else {
-        desRegLov.innerHTML = '';
-        infRegLov.innerHTML = '';
+        regionTitle.innerHTML = '';
+        regionInformation.innerHTML = '';
       }
     }
   }
 }
 
-// получаем элемент кнопки и назначаем для него событие щелчка мыши
-const but = document.getElementById('but');
-but.onclick = getInform;
-////////////////
-const buttonClose = document.querySelector('.fishes-description__close-button');
+const buttonGetInform = document.querySelector('.button');
+buttonGetInform.onclick = getInform;
 
+const buttonClose = document.querySelector('.fishes-description__close-button');
 buttonClose.addEventListener('click', () => {
   desFish.hidden = true;
 });
-
-// function headerScroll() {
-//   window.addEventListener('scroll', () => {
-//     const header = document.querySelector('.header');
-//     const scrollPosition = window.scrollY;
-
-//     if (scrollPosition > 100) {
-//       header.classList.add('header_scrolled');
-//     } else {
-//       header.classList.remove('header_scrolled');
-//     }
-//   });
-// }
-
-// headerScroll();
-////////////////
