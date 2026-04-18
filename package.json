@@ -1,0 +1,33 @@
+{
+  "name": "spinning-handbook-2.0",
+  "version": "1.0.0",
+  "description": "Данный ресурс предназначен для любителей спиннинговой ловли, а также тем, кто только начинает осваивать эту деятельность.",
+  "main": "header.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development",
+    "build:dev": "webpack --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dedal88/spinning-handbook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Dedal88/spinning-handbook/issues"
+  },
+  "homepage": "https://github.com/Dedal88/spinning-handbook#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^14.0.0",
+    "css-loader": "^7.1.4",
+    "html-webpack-plugin": "^5.6.7",
+    "mini-css-extract-plugin": "^2.10.2",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.106.2",
+    "webpack-cli": "^7.0.2",
+    "webpack-dev-server": "^5.2.3"
+  }
+}
