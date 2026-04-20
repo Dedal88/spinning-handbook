@@ -7,6 +7,7 @@ module.exports = {
   mode: 'production',
   entry: {
     main: ['./src/css/style.css', './src/js/script.js'],
+    styles: ['./src/css/style.css'],
     header: './src/js/header.js',
     'mobile-menu': './src/js/mobile-menu.js'
   },
@@ -35,12 +36,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/pages/about.html',
       filename: 'about.html',
-      chunks: ['main', 'header', 'mobile-menu']
+      chunks: ['styles', 'header', 'mobile-menu']
     }),
     new HtmlWebpackPlugin({
       template: './src/pages/contact.html',
       filename: 'contact.html',
-      chunks: ['main', 'header', 'mobile-menu']
+      chunks: ['styles', 'header', 'mobile-menu']
     }),
     new CopyWebpackPlugin({
       patterns: [
