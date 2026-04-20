@@ -6,9 +6,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   mode: 'production',
   entry: {
-    main: ['./src/css/styles.css', './script.js'],
-    header: './header.js',
-    'mobile-menu': './mobile-menu.js'
+    main: ['./src/css/style.css', './src/js/script.js'],
+    header: './src/js/header.js',
+    'mobile-menu': './src/js/mobile-menu.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -28,23 +28,23 @@ module.exports = {
       filename: 'css/[name].[contenthash].css',
     }),
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: './src/pages/index.html',
       filename: 'index.html',
-      chunks: ['main']
+      chunks: ['main', 'header', 'mobile-menu']
     }),
     new HtmlWebpackPlugin({
-      template: './about.html',
+      template: './src/pages/about.html',
       filename: 'about.html',
-      chunks: ['main']
+      chunks: ['main', 'header', 'mobile-menu']
     }),
     new HtmlWebpackPlugin({
-      template: './contact.html',
+      template: './src/pages/contact.html',
       filename: 'contact.html',
-      chunks: ['main']
+      chunks: ['main', 'header', 'mobile-menu']
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'Images', to: 'Images' }
+        { from: 'src/assets/images', to: 'images' }
       ]
     })
   ],
