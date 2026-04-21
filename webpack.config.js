@@ -22,6 +22,37 @@ module.exports = {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name].[contenthash][ext]'
+        },
+        use: [
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 55
+              },
+              optipng: {
+                enabled: false
+              },
+              pngquant: {
+                quality: [0.65, 0.90],
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false
+              },
+              webp: {
+                quality: 75
+              }
+            }
+          }
+        ]
+      }
     ],
   },
   plugins: [
@@ -45,10 +76,21 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'src/assets/images', to: 'images' }
+        { 
+          from: 'src/assets/images', 
+          to: 'images',
+          globOptions: {
+            ignore: ['**/fon1.jpg', '**/fon2.jpg', '**/fon3.jpg']
+          }
+        }
       ]
     })
   ],
+  performance: {
+    maxAssetSize: 1500000, 
+    maxEntrypointSize: 1500000,
+    hints: 'warning'
+  },
   devServer: {
     static: './dist',
     hot: true,

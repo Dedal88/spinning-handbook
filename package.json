@@ -2,7 +2,7 @@
   "name": "spinning-handbook-2.0",
   "version": "1.0.0",
   "description": "Данный ресурс предназначен для любителей спиннинговой ловли, а также тем, кто только начинает осваивать эту деятельность.",
-   "scripts": {
+  "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve --mode development",
     "build:dev": "webpack --mode development"
@@ -23,6 +23,7 @@
     "copy-webpack-plugin": "^14.0.0",
     "css-loader": "^7.1.4",
     "html-webpack-plugin": "^5.6.7",
+    "image-webpack-loader": "^8.1.0",
     "mini-css-extract-plugin": "^2.10.2",
     "style-loader": "^4.0.0",
     "webpack": "^5.106.2",
